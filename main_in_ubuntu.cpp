@@ -10,11 +10,7 @@ using namespace boost;
 int main(void)
 {
     std::cout << "liyuhenghaosb" << std::endl;
-    // printf("aaa");
     initscr();
-    // cbreak();
-    // raw();
-    // curs_set(0); 
     // 定义字符串长度
     char zifuchuan[1];
     char a;
@@ -37,12 +33,10 @@ int main(void)
     //发送和接收
     while (true)
     {
-        zifuchuan[0]=getch();
-        // if (a!='\n'&&a!='\r')
-        // {
+        zifuchuan[0]=getch();//应用于游戏型单信号输入
+        //std::cin>>zifuchuan>>std::endl;//应用于字符串输入
 
         std::cout << "发送：";
-        // std::cin >> zifuchuan;
         asio::write(serial, asio::buffer(zifuchuan, std::strlen(zifuchuan)));
         // std::cout << "长度：" << (int)std::strlen(zifuchuan) << std::endl;
         usleep(1);
@@ -52,17 +46,6 @@ int main(void)
         std::cout.write(zifuchuan, changdu);
         std::cout << "\n长度：" << (int)changdu <<"\n"<< std::endl;
         usleep(1);
-
-        // std::cin >> a;
-        // std::cout<<a<<std::endl;
-            /* code */
-        // }
-
-        // else
-        // {
-        //     std::cout<<"guaguagua"<<std::endl;
-        // }
-        
         
     }
 
