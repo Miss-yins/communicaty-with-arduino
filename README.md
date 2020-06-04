@@ -6,7 +6,8 @@ Communicate with MCU through ASIO
 
 系统的核心是基于asio的上位机与下位机串口通讯，在此基础上进行拓展。
 
-目前本人将此应用于网络通讯，即：pc-pc（asio-MCU）
+目前本人将此应用于网络通讯，即：pc-pc（asio-MCU），低盘选择arduino，也可以选用其他的单片机或者pc设备。
+
 
 PC与PC之间是通过网络广播通讯，可以是ssh，云端，ros等；pc（asio-MCU）端则通过串口连接，接收远端PC的信息，并将指令信息转译并作为控制信号发送给MCU。
 
